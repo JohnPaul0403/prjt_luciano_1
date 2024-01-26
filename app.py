@@ -8,7 +8,7 @@ load_dotenv()
 
 # Database interaction
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'postgresql://lucianozeballos:luciano1104@localhost:5432/database_agar')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 db = SQLAlchemy(app)
 
 # Table for database
